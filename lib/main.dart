@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: routes,
       initialRoute: MainPage.routeName,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.orange,
-        buttonTheme: ButtonThemeData(buttonColor: Colors.orange),
+        buttonTheme: const ButtonThemeData(buttonColor: Colors.orange),
       ),
     );
   }

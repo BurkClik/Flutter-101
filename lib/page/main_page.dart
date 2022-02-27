@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_101/page/button_page.dart';
+import 'package:flutter_101/page/dialog_page.dart';
+import 'package:flutter_101/page/expanded_page.dart';
 import 'package:flutter_101/page/list_view_page.dart';
 import 'package:flutter_101/page/page_view.dart';
-import 'package:flutter_101/page/widget_lifecycle.dart';
+import 'package:flutter_101/page/sheet_page.dart';
+import 'package:flutter_101/page/stack_page.dart';
+import 'package:flutter_101/page/wrap_page.dart';
 
 class MainPage extends StatelessWidget {
   static String routeName = "/main_page";
@@ -11,41 +16,53 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Align(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 64.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, PageViewPage.routeName);
-                    },
-                    child: const Text("ViewPager")),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, ListViewPage.routeName);
-                    },
-                    child: const Text("RecyclerView")),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, LifeCyclePage.routeName);
-                    },
-                    child: const Text("Widget LifeCycles")),
-                ElevatedButton(
-                    onPressed: () {}, child: const Text("Expanded - Flex")),
-                ElevatedButton(onPressed: () {}, child: const Text("Wrap")),
-                ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("DraggableScrollableSheet")),
-                ElevatedButton(onPressed: () {}, child: const Text("Stack")),
-                ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("AboutDialog - AlertDialog")),
-                ElevatedButton(onPressed: () {}, child: const Text("Button")),
-              ],
-            ),
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, PageViewPage.routeName);
+                  },
+                  child: const Text("ViewPager")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, ListViewPage.routeName);
+                  },
+                  child: const Text("RecyclerView")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, ExpandedPage.routeName);
+                  },
+                  child: const Text("Expanded - Flex")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, WrapPage.routeName);
+                  },
+                  child: const Text("Wrap")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, SheetPage.routeName);
+                  },
+                  child: const Text("Sheet")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, StackPage.routeName);
+                  },
+                  child: const Text("Stack")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, DialogPage.routeName);
+                  },
+                  child: const Text("Dialog")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, ButtonPage.routeName);
+                  },
+                  child: const Text("Button")),
+            ],
           ),
         ),
       ),

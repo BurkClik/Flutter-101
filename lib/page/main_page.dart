@@ -6,7 +6,10 @@ import 'package:flutter_101/page/list_view_page.dart';
 import 'package:flutter_101/page/page_view.dart';
 import 'package:flutter_101/page/sheet_page.dart';
 import 'package:flutter_101/page/stack_page.dart';
+import 'package:flutter_101/page/stateful_page.dart';
+import 'package:flutter_101/page/stateless_page.dart';
 import 'package:flutter_101/page/wrap_page.dart';
+import 'navigator_page.dart';
 
 class MainPage extends StatelessWidget {
   static String routeName = "/main_page";
@@ -62,6 +65,21 @@ class MainPage extends StatelessWidget {
                     Navigator.pushNamed(context, ButtonPage.routeName);
                   },
                   child: const Text("Button")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, StatefulPage.routeName);
+                  },
+                  child: const Text("Stateful")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, StatelessPage.routeName);
+                  },
+                  child: const Text("Stateless")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, NavigatorPage.routeName);
+                  },
+                  child: const Text("Navigator")),
             ],
           ),
         ),
